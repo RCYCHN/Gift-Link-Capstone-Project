@@ -1,3 +1,7 @@
+* {
+    /* border: 1px solid white; */
+}
+
 /* Task 1: Style the body */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -13,28 +17,52 @@ body {
 
 /* Task 2: Create a pseudo-element for the background and blur */
 body::before {
+    content: ""; /* Required for pseudo-elements */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("background-gifts.jpg");
+    background-image: url("../static/background-gifts.jpg"); /* Absolute path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(8px);
+    z-index: -1; /* Sends it to the background */
+    pointer-events: none; /* Ensures clicks pass through */
+    border: 1px solid white;
 }
 
+
 /* Task 3: Style the content area */
-.content {
+.container {
     position: relative;
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    align-items: center;
+    justify-content: center;
     z-index: 1;
     text-align: center;
     color: aliceblue;
-    max-width: fit-content;
+    width: 100%; /* Ensure the container stretches across the screen */
+    padding: 20px;
 }
 
 /* Task 4: Add styles for headings, paragraphs, and buttons */
 h1, h2, .lead, .btn-primary {
-    /* insert code here */
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.text-center {
+    max-width: 75%;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    backdrop-filter: blur(9px) saturate(180%);
+    -webkit-backdrop-filter: blur(9px) saturate(180%);
+    background-color: rgba(69, 69, 69, 0.48);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
 }
