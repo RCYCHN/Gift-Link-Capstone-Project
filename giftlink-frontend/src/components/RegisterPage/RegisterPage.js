@@ -25,7 +25,7 @@ function RegisterPage() {
                     {/* insert code here to create input elements for all the variables - firstName, lastName, email, password */}
                     <div className="mb-4">
 
-                        <label htmlFor="firstName" className="form label"> FirstName</label><br>
+                        <label htmlFor="firstName" className="form label"> FirstName</label>
                         <input
                         id="firstName"
                         type="text"
